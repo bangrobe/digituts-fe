@@ -1,11 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@unocss/nuxt", "@sfxcode/nuxt-primevue"],
+  modules: ["@unocss/nuxt", "@sfxcode/nuxt-primevue",'nuxt-icon', '@nuxtjs/apollo'],
   css: [
     "primevue/resources/themes/saga-orange/theme.css",
     "primevue/resources/primevue.css",
   ],
-
+  apollo: {
+    autoImports: true,
+    authType: 'Bearer',
+    authHeader: 'Authorization',
+    tokenStorage: 'cookie',
+    proxyCookies: true,
+    clients: {
+      default: {
+        httpEndpoint: process.env.API_URL + '/graphql'
+      }
+    },
+  },
   build: {
     transpile: ["primevue"],
   },
@@ -34,4 +45,13 @@ export default defineNuxtConfig({
       ],
     ],
   },
+  runtimeConfig: {
+    public: {
+        apiUrl: process.env.API_URL,
+        siteUrl: process.env.SITE_URL,
+        siteName: 'A awesome blog',
+        siteDescription: 'A blog using Nuxt 3',
+        language: 'en'
+    }
+}
 });

@@ -9,11 +9,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/apollo": "5.0.0-alpha.6",
     "@types/node": "^18",
     "@unocss/nuxt": "^0.51.8",
-    "nuxt": "^3.4.3"
+    "nuxt": "^3.4.3",
+    "nuxt-icon": "^0.4.0"
   },
   "dependencies": {
-    "@sfxcode/nuxt-primevue": "^1.1.4"
+    "@sfxcode/nuxt-primevue": "^1.1.4",
+    "@unocss/reset": "^0.51.13"
   }
 }
